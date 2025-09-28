@@ -1,0 +1,86 @@
+
+/* Top Righ Bottom Left*/
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-image: url(imagem.jpg);
+    background-repeat: no-repeat; /*Não repete*/
+    background-size: cover; /*Cobre todo o espaço*/
+    background-position: center; /*Centraliza*/
+
+    
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.61);
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px black;
+    width: 450px;
+    height: 550px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 10px 0px 10px 0px;
+}
+
+.card p {
+    padding: 0px 20px 0px 20px;
+    font-size: 18px;
+}
+
+.card h1{
+    text-align: center;
+    padding: 10px 0px;
+}
+
+input {
+    font-size: 20px;
+    margin-left: 15px;
+    border: 0px;
+    border-radius: 5px;
+    width: 415px;
+    height: 30px;
+}
+
+
+.botoes {
+    text-align: center;
+    padding: 20px 0px;
+}
+
+button {
+    font-size: 15px;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px black; 
+}
+
+button:hover {
+    background-color: #006B8F;
+    color: white;
+}
+
+.resultado {
+    font-size: 20px;
+    margin: 30px 12.5px 22px 12.5px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 400px;
+    height: 150px;
+    background-color: white;
+    overflow-wrap: break-word; /* Comando para quebrar texto*/
+}
+
+.resultado p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+}
+
+.voltar {
+    padding: 10px;
+    text-align: center;
+}
+

@@ -1,0 +1,163 @@
+<!-- Criado por Marise Miranda | 2017.1 -->
+<!-- Adaptado por Matheus Matos | 2025.1 -->
+<!-- Adaptado por Josué Alvarez Avendano | 2025.2 -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTecher's Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <h1>SPTecher's Machine</h1>
+        <div class="conteudo" id="conteudo">
+            <p>Bem-vindo à SPTecher’s Machine! Escolha a base numérica de partida:</p>
+            <div class="botoes">
+                <button onclick="telaDecimal()">Decimal</button>
+                <button onclick="telaBinario()">Binário</button>
+                <button onclick="telaOctal()">Octal</button>
+                <button onclick="telaHexadecimal()">Hexadecimal</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var base = 0;
+
+    function telaDecimal() {
+        base = 10
+        conteudo.innerHTML = `
+            <p>Informe o valor e escolha para qual sistema numérico deseja convertê-lo:</p>
+            <input id="input_num" type="text" placeholder="Ex.: 123 (somente 0–9)">
+            <div class="botoes">
+                <button onclick="binario()">Binário</button>
+                <button onclick="octal()">Octal</button>
+                <button onclick="hexadecimal()">Hexadecimal</button>
+            </div>
+            <div class="resultado"><p id="resultado"></p></div>
+            <div class="voltar">
+                <button onclick="voltar()">Voltar</button>
+            </div>
+        `;
+    }
+
+    function telaBinario() {
+        base = 2;
+        conteudo.innerHTML = `
+            <p>Informe o valor e escolha para qual sistema numérico deseja convertê-lo:</p>
+            <input id="input_num" type="text" placeholder="Ex.: 1011 (somente 0 ou 1)">
+            <div class="botoes">
+                <button onclick="decimal()">Decimal</button>
+                <button onclick="octal()">Octal</button>
+                <button onclick="hexadecimal()">Hexadecimal</button>
+            </div>
+            <div class="resultado"><p id="resultado"></p></div>
+            <div class="voltar">
+                <button onclick="voltar()">Voltar</button>
+            </div>
+        `;
+    }
+
+    function telaOctal() {
+        base = 8;
+        conteudo.innerHTML = `
+            <p>Informe o valor e escolha para qual sistema numérico deseja convertê-lo:</p>
+            <input id="input_num" type="text" placeholder="Ex.: 127 (somente 0–7)">
+            <div class="botoes">
+                <button onclick="decimal()">Decimal</button>
+                <button onclick="binario()">Binario</button>
+                <button onclick="hexadecimal()">Hexadecimal</button>
+            </div>
+            <div class="resultado"><p id="resultado"></p></div>
+            <div class="voltar">
+                <button onclick="voltar()">Voltar</button>
+            </div>
+        `;
+    }
+
+    function telaHexadecimal() {
+        base = 16;
+        conteudo.innerHTML = `
+            <p>Informe o valor e escolha para qual sistema numérico deseja convertê-lo:</p>
+            <input id="input_num" type="text" placeholder="Ex.: AF09 (0–9 e A–F)">
+            <div class="botoes">
+                <button onclick="decimal()">Decimal</button>
+                <button onclick="binario()">Binario</button>
+                <button onclick="octal()">Octal</button>
+            </div>
+            <div class="resultado"><p id="resultado"></p></div>
+            <div class="voltar">
+                <button onclick="voltar()">Voltar</button>
+            </div>
+        `;
+    }
+
+    function voltar() {
+        conteudo.innerHTML = `
+        <p>Bem-vindo à SPTecher’s Machine! Escolha a base numérica de partida:</p>
+            <div class="botoes">
+                <button onclick="telaDecimal()">Decimal</button>
+                <button onclick="telaBinario()">Binário</button>
+                <button onclick="telaOctal()">Octal</button>
+                <button onclick="telaHexadecimal()">Hexadecimal</button>
+            </div>
+        `;
+    }
+
+    function decimal() { 
+        if (base == 2) {
+            var num = parseInt(input_num.value, 2);
+        } else if (base == 8) {
+            var num = parseInt(input_num.value, 8);
+        } else if (base == 16) {
+            var num = parseInt(input_num.value, 16);
+        }
+        resultado.innerHTML = num;
+    }
+
+    function binario() {
+        if (base == 8) {
+            var num = parseInt(input_num.value, 8);
+            num = num.toString(2);
+        } else if (base == 10) {
+            var num = Number(input_num.value);
+            num = num.toString(2);
+        } else if (base == 16) {
+            var num = parseInt(input_num.value, 16);
+            num = num.toString(2);
+        }
+        resultado.innerHTML = num;
+    }
+
+    function octal() {
+        if (base == 2) {
+            var num = parseInt(input_num.value, 2);
+            num = num.toString(8);
+        } else if (base == 10) {
+            var num = Number(input_num.value);
+            num = num.toString(8);
+        } else if (base == 16) {
+            var num = parseInt(input_num.value, 16);
+            num = num.toString(8);
+        }
+        resultado.innerHTML = num;
+    }
+
+    function hexadecimal() {
+        if (base == 2) {
+            var num = parseInt(input_num.value, 2);
+            num = num.toString(16);
+        } else if (base == 8) {
+            var num = parseInt(input_num.value, 8);
+            num = num.toString(16);
+        } else if (base == 10) {
+            var num = Number(input_num.value);
+            num = num.toString(16);
+        }
+        resultado.innerHTML = num;
+    }
+</script>
